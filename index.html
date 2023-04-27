@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Factory Function
+      function pizzaFactory(pizzaSize) {
+        const crust = "Original";
+        const size = pizzaSize;
+        // syntax for return is with arrow function get us rid of this keyword
+        // you should define method in factory function with the arrow function or traditional function method like classes
+        return {
+          bake: () => {
+            console.log(`Baking the ${size} size pizza with ${crust} crust.`);
+          },
+        };
+      }
+      // factory funtion cannot creat using new keyword like classes or constructor function because for factory function we do not create an object, we can create object inside the function
+      const myPizza = pizzaFactory("medium");
+      //By doing (2) ow we can access the bake method with dot(.) notation
+      myPizza.bake();
+    </script>
+  </body>
+</html>
